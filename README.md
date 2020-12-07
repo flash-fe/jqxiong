@@ -14,3 +14,5 @@ lerna link convert
 ```bash
 lerna bootstrap
 ```
+
+### 因为没充钱，所以npm publish --access public
