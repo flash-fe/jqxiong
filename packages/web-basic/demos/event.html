@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件绑定</title>
+</head>
+<body>
+    <p>点击</p>
+    <script type="module" src="/_dist/dom/event.js"></script>
+    <script type="module">
+        import { on, off, once } from '/_dist/dom/event.js'
+        const oP = document.querySelector('p');
+
+        on(oP, 'click', eventBind)
+        function eventBind() {
+            console.log(arguments)
+            console.log('unbineded')
+            off(oP, 'click', eventBind)
+            once(oP, 'click', () => {
+                console.log('once click')
+            })
+        }
+    </script>
+</body>
+</html>
