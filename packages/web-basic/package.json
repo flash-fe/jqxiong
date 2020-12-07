@@ -1,0 +1,32 @@
+{
+  "name": "web-basic",
+  "version": "1.0.0",
+  "description": "web basic funcs",
+  "main": "index.js",
+  "scripts": {
+    "serve": "node ./server",
+    "tsc": "cp ./config/tsconfig.dev.json ./tsconfig.json && tsc -w",
+    "build": "cp ./config/tsconfig.prod.json ./tsconfig.json && tsc && node ./build/copy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flash-fe/web-basic.git"
+  },
+  "keywords": [
+    "web",
+    "DOM",
+    "BOM",
+    "Animate",
+    "basic"
+  ],
+  "author": "jqxiong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flash-fe/web-basic/issues"
+  },
+  "homepage": "https://github.com/flash-fe/web-basic#readme",
+  "devDependencies": {
+    "@jqxiong/static-server": "^1.0.1",
+    "typescript": "^4.1.2"
+  }
+}

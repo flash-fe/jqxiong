@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <p>事件代理</p>
+    <ul class="list">
+        <li data-id="1"><span>列表1</span></li>
+        <li data-id="2">列表2</li>
+        <li data-id="3">列表3</li>
+        <li data-id="4">列表4</li>
+        <li data-id="5">列表5</li>
+    </ul>
+    <script type="module" src="/_dist/dom/delegate.js"></script>
+    <script type="module">
+        import delegate from '/_dist/dom/delegate.js'
+        // console.log(delegate)
+        delegate('ul.list', 'li', 'click', handleLiClick)
+        function handleLiClick(ev) {
+            console.log(ev.delegateTarget.dataset.id)
+        }
+    </script>
+</body>
+</html>

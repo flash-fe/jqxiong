@@ -1,0 +1,1 @@
+require('@jqxiong/static-server')()
