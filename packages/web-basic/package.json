@@ -6,6 +6,7 @@
   "scripts": {
     "serve": "node ./server",
     "tsc": "cp ./config/tsconfig.dev.json ./tsconfig.json && tsc -w",
+    "dev": "node ./build/dev",
     "build": "cp ./config/tsconfig.prod.json ./tsconfig.json && tsc && node ./build/copy"
   },
   "repository": {

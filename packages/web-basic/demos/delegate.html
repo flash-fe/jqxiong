@@ -19,9 +19,10 @@
     <script type="module">
         import delegate from '/_dist/dom/delegate.js'
         // console.log(delegate)
-        delegate('ul.list', 'li', 'click', handleLiClick)
+        const delegator = delegate('ul.list', 'li', 'click', handleLiClick)
         function handleLiClick(ev) {
             console.log(ev.delegateTarget.dataset.id)
+            console.log(delegator)
         }
     </script>
 </body>
