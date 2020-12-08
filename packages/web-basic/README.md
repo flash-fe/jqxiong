@@ -15,6 +15,11 @@ npm run serve
 npm run tsc
 ```
 
+> simple
+```bash
+npm run dev
+```
+
 在dev环境下，使用module形式开发
 
 打包发布npm时，以commonjs形态发布
