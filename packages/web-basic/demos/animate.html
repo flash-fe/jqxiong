@@ -24,28 +24,40 @@
     <p>
         动画处理
         <button id="btn">go</button>
+        <button id="reset">reset</button>
     </p>
     <div id="box"></div>
     <script type="module">
         import Animate from '/_dist/animate/index.js'
+        import Tween from '/_dist/animate/tween.js'
+
         const oBtn = document.querySelector('#btn')
+        const oReset = document.querySelector('#reset')
         const oBox = document.querySelector('#box');
 
         const moveAni = new Animate({
+            // start: 3.3333333333333333333,
             start: 0,
-            end: 100,
-            duration: 300,
+            // end: 153.339966,
+            end: 200,
+            duration: 400,
+            // easing: Tween.Cubic.easeOut,
+            // easing: Tween.Back.easeOut,
+            easing: 'easeOutBack',
             onAnimating: val => {
-                console.log('xx')
-                oBox.style.left = `${val}px`;
-                oBox.style.top = `${val + 30}px`;
+                // console.log(val)
+                oBox.style.transform = `translateX(${val}px) translateY(${val}px)`;
             },
-            onComplete: () => {
+            onComplete: (val) => {
+                console.log(val)
                 console.log('end')
             }
         })
         oBtn.onclick = () => {
             moveAni.run();
+        }
+        oReset.onclick = () => {
+            moveAni.reset()
         }
     </script>
 </body>
