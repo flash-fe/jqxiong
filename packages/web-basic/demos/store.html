@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Store</title>
+</head>
+<body>
+    <p>Store</p>
+    <script type="module">
+        import LocalStorage from '/_dist/store/localStorage.js'
+        const store = new LocalStorage({
+            key: 'TEST_STORE'
+            // lifeTime: 3 * 24 * 60 * 60 * 1000
+        })
+        store.set({
+            foo: 'sasas'
+        }, data => {
+            console.log(data)
+        })
+        const data = store.get()
+        console.log(data)
+    </script>
+</body>
+</html>
