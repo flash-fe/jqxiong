@@ -8,9 +8,9 @@
 </head>
 <body>
     <p>点击</p>
-    <script type="module" src="/_dist/dom/event.js"></script>
+    <script type="module" src="/_dist/dom/event"></script>
     <script type="module">
-        import { on, off, once } from '/_dist/dom/event.js'
+        import { on, off, once } from '/_dist/dom/event'
         const oP = document.querySelector('p');
 
         on(oP, 'click', eventBind)

@@ -1,5 +1,5 @@
 // 用观察者模式实现一个事件系统
-import Iterator from './itarator.js'
+import Iterator from './itarator'
 
 type eventFuc = (data?: any) => any
 

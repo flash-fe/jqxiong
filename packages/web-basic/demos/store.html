@@ -8,8 +8,9 @@
 </head>
 <body>
     <p>Store</p>
+    <button id="btn">remove</button>
     <script type="module">
-        import LocalStorage from '/_dist/store/localStorage.js'
+        import LocalStorage from '/_dist/store/index'
         const store = new LocalStorage({
             key: 'TEST_STORE'
             // lifeTime: 3 * 24 * 60 * 60 * 1000
@@ -21,6 +22,9 @@
         })
         const data = store.get()
         console.log(data)
+        document.querySelector('#btn').onclick = () => {
+            store.remove()
+        }
     </script>
 </body>
 </html>

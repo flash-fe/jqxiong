@@ -8,27 +8,27 @@
 </head>
 <body>
     <script type="module">
-        import flatten from '/_dist/array/flatten.js'
-        import parseDate from '/_dist/string/parseDate.js'
-        import isDateString from '/_dist/string/isDateString.js'
-        import toFormat from '/_dist/date/toFormat.js'
-        import addTime from '/_dist/date/addTime.js'
-        import isDate from '/_dist/date/isDate.js'
+        import flatten from '/_dist/array/flatten'
+        import parseDate from '/_dist/string/parseDate'
+        import isDateString from '/_dist/string/isDateString'
+        import toFormat from '/_dist/date/toFormat'
+        import addTime from '/_dist/date/addTime'
+        import isDate from '/_dist/date/isDate'
 
-        // const arr = [[[1]], [2, [3, 4]], 5]
-        // console.log(flatten(arr))
-        // console.log(flatten([[1, 4], [2, 3]]))
-        // console.log(flatten([1, 2, 3, 5]))
-        // console.log(flatten([ {lat: 1, lng: 3}, [ {lat: 12, lng: 33}, {lat: 34, lng: 3} ]]))
+        const arr = [[[1]], [2, [3, 4]], 5]
+        console.log(flatten(arr))
+        console.log(flatten([[1, 4], [2, 3]]))
+        console.log(flatten([1, 2, 3, 5]))
+        console.log(flatten([ {lat: 1, lng: 3}, [ {lat: 12, lng: 33}, {lat: 34, lng: 3} ]]))
         // 将字符串解析成date
-        // const date = parseDate('2020-11-30 14:00')
-        // console.log(date)
-        // addTime(date, {
-        //     day: 1
-        // })
-        // console.log(toFormat(date, 'MM-dd HH:mm:ss 周E'))
+        const date = parseDate('2020-11-30 14:00')
+        console.log(date)
+        addTime(date, {
+            day: 1
+        })
+        console.log(toFormat(date, 'MM-dd HH:mm:ss 周E'))
 
-        // console.log(isDate(date))
+        console.log(isDate(date))
         console.log(isDateString('asas'))
         console.log(isDateString('2020-11-30 14:00'))
     </script>

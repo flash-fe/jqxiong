@@ -1,5 +1,5 @@
 // copied from vue-router
-import isInBrowser from '../utils/isInBrowser.js'
+import isInBrowser from '../utils/isInBrowser'
 
 const encodeReserveRE = /[!'()*]/g
 const encodeReserveReplacer = (c: string) => '%' + c.charCodeAt(0).toString(16)

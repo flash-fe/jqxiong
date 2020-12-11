@@ -1,5 +1,5 @@
-import Tween from './tween.js'
-import easing from './easing.js'
+import Tween from './tween'
+import easing from './easing'
 
 interface IProps {
     el: HTMLElement;

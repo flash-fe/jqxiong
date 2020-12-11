@@ -1,6 +1,6 @@
 // 对localStorage操作的封装
-import toFormat from '../date/toFormat.js'
-import parseDate from '../string/parseDate.js'
+import toFormat from '../date/toFormat'
+import parseDate from '../string/parseDate'
 
 // store实例配置
 interface IOptions {
