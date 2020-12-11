@@ -11,7 +11,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/flash-fe/web-basic.git"
+        "url": "git+https://github.com/flash-fe/jqxiong.git"
     },
     "keywords": [
         "web",
@@ -23,7 +23,7 @@
     "author": "jqxiong",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/flash-fe/web-basic/issues"
+        "url": "https://github.com/flash-fe/jqxiong/issues"
     },
-    "homepage": "https://github.com/flash-fe/web-basic#readme"
+    "homepage": "https://github.com/flash-fe/jqxiong/tree/main/packages/web-basic#readme"
 }
