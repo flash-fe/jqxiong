@@ -1,4 +1,4 @@
-# 基于lerna的模块依赖的开发仓库
+# 基于lerna的模块依赖的web模块仓库
 
 ### install lerna
 ```bash

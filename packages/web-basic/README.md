@@ -1,25 +1,11 @@
 # web-basic
-web相关的基础功能模块, DOM/BOM/format/动画等]
+web相关的基础功能模块
 
-### 开发模式
-
-> 启动server服务
-
-```bash
-npm run serve
-```
-
-> 启动ts编译
-
-```bash
-npm run tsc
-```
-
-> simple
-```bash
-npm run dev
-```
-
-在dev环境下，使用module形式开发
-
-打包发布npm时，以commonjs形态发布
+* [数组Array](./src/array/readme.md)
+* [字符串String](./src/string/readme.md)
+* [时间对象Date](./src/date/readme.md)
+* [DOM操作](./src/dom/readme.md)
+* [BOM](./src/bom/readme.md)
+* [Store](./src/store/readme.md)
+* [动画Animate](./src/animate/readme.md)
+* [工具模块](./src/utils/readme.md)

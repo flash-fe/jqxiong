@@ -26,14 +26,25 @@ once(oP, 'click', clickHandle)
 
 ### [事件代理模块delegate](https://react-o1q57r.stackblitz.io/delegate)
 ```js
-import delegate from '@jqxiong/web-basic'
+import delegate from '@jqxiong/web-basic/dom/delegate'
 ```
 
 #### 事件代理
-> (elements, selector, type, callback, useCapture = false)
+> delegate(elements, selector, type, callback, useCapture = false)
 ```js
 // 绑定事件
 const delegator = delegate('ul.list', 'li', 'click', handleLiClick)
 // 代理事件解除绑定
 delegator.map(de => de.destroy())
+```
+
+### 获取元素相窗口的offset
+* `getPositionTop(element)`
+* `getPositionLeft(element)`
+```js
+import { getPositionTop, getPositionLeft } from '@jqxiong/web-basic/dom/position';
+
+const oP = document.querySelector('p')
+console.log(`top: ${getPositionTop(oP)}`)
+console.log(`left: ${getPositionLeft(oP)}`)
 ```

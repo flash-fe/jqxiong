@@ -2,7 +2,6 @@ import Tween from './tween'
 import easing from './easing'
 
 interface IProps {
-    el: HTMLElement;
     start: number;
     end: number;
     duration?: number; // 动画时间
