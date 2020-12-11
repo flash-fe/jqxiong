@@ -1,11 +1,12 @@
 {
     "name": "@jqxiong/web-basic",
-    "version": "1.0.1",
+    "version": "1.0.0",
     "description": "web basic funcs",
     "main": "index.js",
     "scripts": {
         "serve": "node ./server",
         "tsc": "cp ./config/tsconfig.dev.json ./tsconfig.json && tsc -w",
+        "dev": "node ./build/dev",
         "build": "cp ./config/tsconfig.prod.json ./tsconfig.json && tsc && node ./build/copy"
     },
     "repository": {

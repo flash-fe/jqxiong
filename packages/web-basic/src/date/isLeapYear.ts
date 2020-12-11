@@ -5,7 +5,7 @@ export type yearArg = Date | number;
 function isLeapYear(year: yearArg) {
   let fullYear: number;
   // 日期类型
-  if ((year as Date).getFullYear) {
+  if ((year as Date)['getFullYear']) {
     // jsx中不能使用尖括号的类型断言, 会与标签元素冲突
     // (<Date>year).getFullYear();
     fullYear = (year as Date).getFullYear();
