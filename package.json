@@ -5,6 +5,7 @@
     "lerna": "^3.22.1"
   },
   "dependencies": {
+    "@jqxiong/fetcher": "file:packages/fetcher/dist",
     "@jqxiong/static-server": "file:packages/static-server",
     "@jqxiong/web-basic": "file:packages/web-basic/dist"
   }
