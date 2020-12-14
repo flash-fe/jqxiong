@@ -19,7 +19,7 @@ const store = new LocalStorage({
     key: 'TEST_STORE'
     // lifeTime: 3 * 24 * 60 * 60 * 1000
 })
-store.set({ßßß
+store.set({
     foo: 'sasas'
 }, data => {
     console.log(data)
