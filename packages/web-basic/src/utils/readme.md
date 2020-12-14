@@ -22,3 +22,30 @@ function handleTrigger(data) {
 globalEvt.emit('trigger', { foo: 'bar' })
 globalEvt.emit('trigger', { foo: 'bar' })
 ```
+
+### 各种环境判断模块, 具体见[源码](https://github.com/flash-fe/jqxiong/tree/main/packages/web-basic/src/utils)
+
+* isAndroid
+* isIPhone
+* isIPhoneX
+* isIPhoneXSR
+* isInWeChat
+* isInAliPay
+* isType
+* isInBrowser
+* miniEnv
+
+#### miniEnv 小程序环境判断
+```js
+import miniEnv from '@jqxiong/web-basic/utils/miniEnv'
+
+console.log(miniEnv)
+/*
+{
+    isInWeChat: true,
+    isInApiPay: false,
+    isInWeChatMiniProgram: true,
+    isInAliPayMiniProgram: false
+}
+*/
+```

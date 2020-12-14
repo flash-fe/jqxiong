@@ -12,10 +12,19 @@
         import { getCookie, setCookie, removeCookie } from '/_dist/bom/cookie'
         import query from '/_dist/bom/query'
         import EventEmitter from '/_dist/utils/eventEmitter'
+        import isAndroid from '/_dist/utils/isAndroid'
+        import isIPhone from '/_dist/utils/isIPhone'
+        import isIPhoneX from '/_dist/utils/isIPhoneX'
+        import miniEnv from '/_dist/utils/miniEnv'
         const q = query('s')
         console.log(q)
         console.log(query())
         console.log(getCookie('_bfi'))
+
+        console.log('isAndroid', isAndroid)
+        console.log('isIPhone', isIPhone)
+        console.log('isIPhoneX', isIPhoneX)
+        console.log(miniEnv.isInWeChatMiniProgram)
 
         setCookie('foo', 'asas')
         // console.log(getCookie('foo'))
