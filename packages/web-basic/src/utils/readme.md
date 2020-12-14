@@ -33,6 +33,7 @@ globalEvt.emit('trigger', { foo: 'bar' })
 * isInAliPay
 * isType
 * isInBrowser
+* isPrivateModel 隐身模式
 * miniEnv
 
 #### miniEnv 小程序环境判断
