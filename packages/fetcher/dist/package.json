@@ -1,0 +1,38 @@
+{
+    "name": "@jqxiong/fetcher",
+    "version": "1.0.0",
+    "description": "web fetch basic",
+    "keywords": [
+        "fetch",
+        "json",
+        "loadScript",
+        "jsonp"
+    ],
+    "author": "jqxiong",
+    "homepage": "https://github.com/flash-fe/jqxiong#readme",
+    "license": "ISC",
+    "main": "index.js",
+    "directories": {
+        "lib": "src",
+        "test": "__tests__"
+    },
+    "files": [
+        "lib"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/flash-fe/jqxiong.git"
+    },
+    "scripts": {
+        "serve": "node ./server",
+        "tsc": "cp ./config/tsconfig.dev.json ./tsconfig.json && tsc -w",
+        "dev": "node ./build/dev",
+        "build": "cp ./config/tsconfig.prod.json ./tsconfig.json && tsc && node ./build/copy"
+    },
+    "bugs": {
+        "url": "https://github.com/flash-fe/jqxiong/issues"
+    }
+}
