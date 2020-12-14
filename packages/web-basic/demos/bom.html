@@ -16,6 +16,8 @@
         import isIPhone from '/_dist/utils/isIPhone'
         import isIPhoneX from '/_dist/utils/isIPhoneX'
         import miniEnv from '/_dist/utils/miniEnv'
+        import isPrivateModel from '/_dist/utils/isPrivateModel'
+
         const q = query('s')
         console.log(q)
         console.log(query())
@@ -33,6 +35,8 @@
 
         const globalEvt = new EventEmitter()
         globalEvt.on('trigger', handleTrigger)
+
+        console.log(isPrivateModel)
 
         function handleTrigger(data) {
             console.log('xx')
