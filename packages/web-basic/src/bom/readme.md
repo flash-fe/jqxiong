@@ -16,6 +16,16 @@ console.log(query())
 ### cookie处理
 > getCookie(key: string): string | null
 ```js
-import { getCookie } from '/_dist/bom/cookie'
+import { getCookie } from '@jqxiong/web-basic/bom/cookie'
 console.log(getCookie('_bfi'))
+```
+> setCookie(key: string, value: string, timeout?: Date, path?: string, domain?: string, secure?: any)
+```js
+import { setCookie } from '@jqxiong/web-basic/bom/cookie'
+setCookie('foo', 'bar')
+```
+> removeCookie(key: string, options: any)
+```js
+import { removeCookie } from '@jqxiong/web-basic/bom/cookie'
+removeCookie('foo', { path: 'demos' })
 ```
