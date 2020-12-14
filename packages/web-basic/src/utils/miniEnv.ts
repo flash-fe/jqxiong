@@ -1,7 +1,7 @@
 // 判断小程序环境
 import isInBrowser from './isInBrowser'
 import isInWeChat from './isInWeChat'
-import isInAliPay from './isInAlipay'
+import isInAliPay from './isInAliPay'
 
 export function miniEnv() {
     const source = window.navigator.userAgent;
