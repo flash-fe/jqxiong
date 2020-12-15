@@ -7,5 +7,5 @@ interface IParams {
     cb?: string;
     [key: string]: any;
 }
-declare function jsonp(url: string, params?: IParams): Promise<unknown> | undefined;
+declare function jsonp(url: string, params?: IParams): Promise<unknown>;
 export default jsonp;

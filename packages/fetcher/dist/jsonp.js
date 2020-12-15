@@ -6,16 +6,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var deserializeQuery_1 = __importDefault(require("@jqxiong/web-basic/bom/deserializeQuery"));
 function jsonp(url, params) {
     if (params === void 0) { params = {}; }
-    console.log(url);
-    console.log(params);
-    console.log(deserializeQuery_1.default);
-    return;
     // 创建函数名
     return new Promise(function (resolve, reject) {
         var timeStamp = new Date().getTime();
         var cb = params.cb || "flash_jsonp_" + timeStamp;
+        params.cb = cb; // 默认处理jsonp 函数名 cb
+        var fixedUrl = deserializeQuery_1.default(params, url);
         var script = document.createElement('script');
-        script.src = url;
+        script.src = fixedUrl;
         document.body.appendChild(script);
         script.onerror = reject;
         document.body.removeChild(script);

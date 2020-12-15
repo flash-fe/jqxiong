@@ -1,13 +1,19 @@
 const path = require('path')
 const glob = require('glob')
 
-const tsFiles = glob.sync(path.resolve(__dirname, '..', 'tests', '**', '*.js'))
+const jsFiles = glob.sync(path.resolve(__dirname, '..', 'demos', 'js', '**', '*.js'))
+let entries = {};
+
+for (const item of jsFiles) {
+    const nm = item.split(/\/js\//)[1]
+    entries[nm] = item
+}
 
 module.exports = {
-    entry: tsFiles,
+    entry: entries,
     mode: 'development',
     output: {
-        filename: '[name].js',
+        filename: '[name]',
         path: '/_dist',
         publicPath: '/dist',
         libraryTarget: 'umd'
