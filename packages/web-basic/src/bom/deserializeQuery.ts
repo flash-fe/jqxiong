@@ -1,3 +1,5 @@
+import query from './query'
+
 interface IParams {
     [key: string]: string
 }
@@ -12,15 +14,18 @@ function desQuery(params: any = {}, url?: string) {
     try {
 
         for (const item in params) {
-            str += `${params[item]}&`
+            str += `${item}=${params[item]}&`
         }
         str = str.replace(/&$/, '')
 
         if (url) {
             url = url.replace(/&$/, '');
-            // 非?结尾， 加?
-            if (!/\?$/.test(url)) {
-                url += '?'
+            const originQueryParams = query('', url)
+            // 已经存在query参数
+            if (Object.keys(originQueryParams).length > 0) {
+                url += '&';
+            } else {
+                url = /\?$/.test(url) ? url : url + '?'
             }
             str = url + str;
         }

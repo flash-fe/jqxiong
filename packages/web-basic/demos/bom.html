@@ -17,6 +17,7 @@
         import isIPhoneX from '/_dist/utils/isIPhoneX'
         import miniEnv from '/_dist/utils/miniEnv'
         import isPrivateModel from '/_dist/utils/isPrivateModel'
+        import desQuery from '/_dist/bom/deserializeQuery'
 
         const q = query('s')
         console.log(q)
@@ -46,6 +47,13 @@
 
         globalEvt.emit('trigger', { foo: 'bar' })
         globalEvt.emit('trigger', { foo: 'bar' })
+
+        // desQuery()
+        const url = 'http://www.baidu.com?search=foo'
+        console.log(desQuery({
+            foo: 'bar',
+            aa: 'nn'
+        }, url))
     </script>
 </body>
 </html>

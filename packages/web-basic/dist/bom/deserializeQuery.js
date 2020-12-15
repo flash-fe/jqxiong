@@ -1,5 +1,9 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+var query_1 = __importDefault(require("./query"));
 /**
  *  反序列化params 为 query参数
  * @param params {}
@@ -10,14 +14,18 @@ function desQuery(params, url) {
     var str = '';
     try {
         for (var item in params) {
-            str += params[item] + "&";
+            str += item + "=" + params[item] + "&";
         }
         str = str.replace(/&$/, '');
         if (url) {
             url = url.replace(/&$/, '');
-            // 非?结尾， 加?
-            if (!/\?$/.test(url)) {
-                url += '?';
+            var originQueryParams = query_1.default('', url);
+            // 已经存在query参数
+            if (Object.keys(originQueryParams).length > 0) {
+                url += '&';
+            }
+            else {
+                url = /\?$/.test(url) ? url : url + '?';
             }
             str = url + str;
         }

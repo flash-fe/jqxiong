@@ -103,9 +103,18 @@ export function stringifyQuery(obj: any) {
 
 // client only
 const getQuery = (key = '', url = '') => {
-    const searchStr = url || isInBrowser ? window.location.search : '';
+
+    let searchStr = '';
+    if (url) {
+        // 传入的url需要处理成window.location.search的形式
+        searchStr = url.split('?')[1];
+    } else {
+        searchStr = isInBrowser ? window.location.search : ''
+    }
+
     const parsedQuery = resolveQuery(searchStr);
     const queryObj = parsedQuery || {};
+
     if (key) {
         return queryObj[key] || ''
     }

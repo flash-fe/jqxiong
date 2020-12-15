@@ -94,7 +94,14 @@ exports.stringifyQuery = stringifyQuery;
 var getQuery = function (key, url) {
     if (key === void 0) { key = ''; }
     if (url === void 0) { url = ''; }
-    var searchStr = url || isInBrowser_1.default ? window.location.search : '';
+    var searchStr = '';
+    if (url) {
+        // 传入的url需要处理成window.location.search的形式
+        searchStr = url.split('?')[1];
+    }
+    else {
+        searchStr = isInBrowser_1.default ? window.location.search : '';
+    }
     var parsedQuery = resolveQuery(searchStr);
     var queryObj = parsedQuery || {};
     if (key) {
