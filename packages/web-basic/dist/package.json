@@ -25,5 +25,8 @@
     "bugs": {
         "url": "https://github.com/flash-fe/jqxiong/issues"
     },
-    "homepage": "https://github.com/flash-fe/jqxiong/tree/main/packages/web-basic#readme"
+    "homepage": "https://github.com/flash-fe/jqxiong/tree/main/packages/web-basic#readme",
+    "dependencies": {
+        "webpack-cli": "^4.2.0"
+    }
 }
