@@ -27,10 +27,9 @@
         "url": "git+https://github.com/flash-fe/jqxiong.git"
     },
     "scripts": {
-        "serve": "node ./server",
-        "tsc": "cp ./config/tsconfig.dev.json ./tsconfig.json && tsc -w",
         "dev": "../../node_modules/.bin/webpack-dev-server --config ./build/webpack.config.js",
-        "build": "cp ./config/tsconfig.prod.json ./tsconfig.json && tsc && node ./build/copy"
+        "tsc": "tsc -w",
+        "build": "tsc && node ./build/copy"
     },
     "bugs": {
         "url": "https://github.com/flash-fe/jqxiong/issues"
