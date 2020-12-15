@@ -103,4 +103,4 @@ _dist
 # TernJS port file
 .tern-port
 
-packages/*/tsconfig.json
+# packages/*/tsconfig.json
