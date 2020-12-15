@@ -2,10 +2,17 @@
 
 > 提供网络请求的基础模块, fetch, loadScript, lazyLoadImgs, jsonp等
 
-## Usage
+## jsonp
+### 发起一个jsonp请求
 
-```
-const fetcher = require('@jqxiong/fetcher');
+```js
+const jsonp = require('@jqxiong/fetcher/jsonp');
 
-// TODO: DEMONSTRATE API
+jsonp(url, {
+    foo: bar,
+    cb: 'jsonp' // 可以指定回调参数函数名
+}).then(rst => {
+    console.log(rst)
+})
+
 ```
