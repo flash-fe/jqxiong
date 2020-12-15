@@ -1,4 +1,4 @@
-require('@jqxiong/static-server')(8080, [ handleDevDist ])
+require('@jqxiong/static-server')(8888, [ handleDevDist ])
 
 // 处理dist目录返回js文件类型
 function handleDevDist(req, res, next) {
