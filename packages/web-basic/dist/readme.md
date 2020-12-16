@@ -22,4 +22,4 @@ const moveAni = new Animate({
 moveAni.run();
 ```
 
-## [See docs](https://github.com/flash-fe/jqxiong/tree/main/packages/web-basic#web-basic)
+## [See docs](https://github.com/flash-fe/jqxiong/tree/main/packages/web-basic#jqxiongweb-basic)
