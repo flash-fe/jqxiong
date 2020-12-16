@@ -1,4 +1,4 @@
-# web-basic
+# @jqxiong/web-basic
 web相关的基础功能模块
 
 * [数组Array](./src/array/readme.md)
