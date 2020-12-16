@@ -36,6 +36,5 @@
     },
     "peerDependencies": {
         "@jqxiong/web-basic": "^1.0.4"
-    },
-    "gitHead": "db2744e393a776bc74a579e99c96aa0bb8c007bf"
+    }
 }
