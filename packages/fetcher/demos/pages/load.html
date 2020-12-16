@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Load Sources</title>
+    <style>
+        .loaded-img {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+            transition: .3s ease;
+        }
+        .ani-hide {
+            opacity: 0;
+        }
+        .ani-show {
+            opacity: 1;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <p>load Sources</p>
+    </div>
+    <script type="x-template" id="message-box">
+        <div class="msg-box">
+            <p>message, {{xTitle}}, 我是Vue</p>
+            <img
+                :src="imgSrc"
+                class="loaded-img"
+                :class="isLoaded ? 'ani-show' : 'ani-hide'"
+            >
+            <button @click="xTitle = 'sasa'">click</button>
+            <button
+                @click="loadImg"
+                :disabled="isLoading"
+            >{{isLoading ? 'loading' : '加载图片'}}</button>
+        </div>
+    </script>
+    <script type="x-template" id="app-box">
+        <div class="box">
+            <p>Hello, {{name}}</p>
+            <message-box></message-box>
+        </div>
+    </script>
+    <script src="/dist/load.js"></script>
+</body>
+</html>
