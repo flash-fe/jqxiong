@@ -1,4 +1,4 @@
-import { loadScript, loadImg } from '@jqxiong/fetcher/load'
+import { loadScript } from '@jqxiong/fetcher/load'
 
 // 加载网络资源
 const vue = 'https://cdn.jsdelivr.net/npm/vue@2.6.12'
@@ -12,37 +12,9 @@ async function init() {
 
 function initVueApp() {
 
-    // 注册message-box组件
-    Vue.component('message-box', {
-        props: {
-            title: {
-                type: String,
-                default: 'as'
-            }
-        },
-        data() {
-            return {
-                imgUrl: 'https://cn.vuejs.org/images/logo.png?ts=3453464645654',
-                isLoading: false,
-                isLoaded: false,
-                xTitle: this.title
-            }
-        },
-        computed: {
-            imgSrc() {
-                return this.isLoaded ? this.imgUrl : ''
-            }
-        },
-        template: '#message-box',
-        methods: {
-            async loadImg() {
-                this.isLoading = true;
-                await loadImg(this.imgUrl)
-                this.isLoaded = true
-                this.isLoading = false
-            }
-        }
-    })
+    // 放在这里reqruie, 处理初始化的时机问题
+    const MessageBox = require('./components/MessageBox').default
+    const TaskComponent = require('./components/TaskQueue').default
 
     // 初始化app
     const app = new Vue({
@@ -51,6 +23,10 @@ function initVueApp() {
             return {
                 name: 'Cambridge Xiong'
             }
+        },
+        components: {
+            MessageBox,
+            TaskComponent
         }
     })
     app.$mount('#app')

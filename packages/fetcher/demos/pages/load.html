@@ -19,6 +19,35 @@
             opacity: 1;
             background-color: #fff;
         }
+        .img-box {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .img-box li {
+            list-style: none;
+            width: 33.33%;
+            padding-top: 33.33%;
+            background-color: #ddd;
+            flex-shrink: 0;
+            position: relative;
+        }
+        .li-img-box {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-sizing: border-box;
+            padding: 8px;
+            background-color: #ccc;
+        }
+        .img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
     </style>
 </head>
 <body>
@@ -44,6 +73,27 @@
         <div class="box">
             <p>Hello, {{name}}</p>
             <message-box></message-box>
+            <task-component></task-component>
+        </div>
+    </script>
+    <script type="x-template" id="task-box">
+        <div class="box">
+            <h4>异步任务并发限制队列</h4>
+            <ul class="img-box">
+                <li v-for="item in imgs">
+                    <div class="li-img-box">
+                        <img
+                            class="loaded-img"
+                            :class="item.state == 'fulfilled' ? 'ani-show' : 'ani-hide'"
+                            :src="item.result"
+                        >
+                    </div>
+                </li>
+            </ul>
+            <button
+                @click="runTask"
+                :disabled="isLoading"
+            >开始异步任务</button>
         </div>
     </script>
     <script src="/dist/load.js"></script>
