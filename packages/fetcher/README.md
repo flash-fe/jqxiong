@@ -97,7 +97,7 @@ queue.run([promise1, promise2, promiseFunc1])
 ## retry 异步任务重试模块
 ```js
 import { retry } from '@jqxiong/fetcher/utils'
-    retry(query, 6, 3000)
+retry(query, 6, 3000)
     .then(rst => {
         console.log(rst)
     })
