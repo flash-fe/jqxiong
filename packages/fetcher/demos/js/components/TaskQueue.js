@@ -1,17 +1,20 @@
-import TaskQueue from '@jqxiong/fetcher/utils/taskQueue'
+import { TaskQueue, retry } from '@jqxiong/fetcher/utils'
 import { loadImg } from '@jqxiong/fetcher/load'
+
+let counter = 0;
+
 // mock promise
-// function pr1(rst, duration, isOK = true) {
-//     return new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//             if (isOK) {
-//                 resolve(rst)
-//             } else {
-//                 reject(rst)
-//             }
-//         }, duration)
-//     })
-// }
+function query() {
+    counter++;
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            console.log(counter)
+            counter >= 5
+            ? resolve('ok')
+            : reject('rejected')
+        }, 1000)
+    })
+}
 
 function lazyLoadImg(url) {
     return function() {
@@ -53,6 +56,19 @@ const TaskComponent = Vue.extend({
                 // pr1('asasa', 1e3, false)
                 // loadImg('')
             ])
+        },
+        retryFetch() {
+            retry(
+                query,
+                6
+                // 3000
+            )
+            .then(rst => {
+                console.log(rst)
+            })
+            .catch(err => {
+                console.log(err)
+            })
         },
         handleRunning(rst) {
             // console.log('running')
